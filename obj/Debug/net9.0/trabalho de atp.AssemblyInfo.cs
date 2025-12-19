@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("trabalho de atp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+603289a9a21952b2bdb3486c1d0c67ed6fbf12a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c87400ffdb30a9cd5a675bfba54efa54494cada")]
 [assembly: System.Reflection.AssemblyProductAttribute("trabalho de atp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("trabalho de atp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
