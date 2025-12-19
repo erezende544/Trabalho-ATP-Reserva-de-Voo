@@ -12,3 +12,4 @@ C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\refint\trabalho de atp
 C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.pdb
 C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.genruntimeconfig.cache
 C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\ref\trabalho de atp.dll
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.sourcelink.json
