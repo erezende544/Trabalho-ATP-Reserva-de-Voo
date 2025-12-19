@@ -1,0 +1,14 @@
+C:\Users\eduar\Documents\trabalho de atp\bin\Debug\net9.0\trabalho de atp.exe
+C:\Users\eduar\Documents\trabalho de atp\bin\Debug\net9.0\trabalho de atp.deps.json
+C:\Users\eduar\Documents\trabalho de atp\bin\Debug\net9.0\trabalho de atp.runtimeconfig.json
+C:\Users\eduar\Documents\trabalho de atp\bin\Debug\net9.0\trabalho de atp.dll
+C:\Users\eduar\Documents\trabalho de atp\bin\Debug\net9.0\trabalho de atp.pdb
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.AssemblyInfoInputs.cache
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.AssemblyInfo.cs
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.csproj.CoreCompileInputs.cache
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.dll
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\refint\trabalho de atp.dll
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.pdb
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\trabalho de atp.genruntimeconfig.cache
+C:\Users\eduar\Documents\trabalho de atp\obj\Debug\net9.0\ref\trabalho de atp.dll

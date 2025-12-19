@@ -1,0 +1,4 @@
+AB1245;São Paulo;50
+NB7845;Rio de Janeiro;40
+CG8541;Bahia;50
+
