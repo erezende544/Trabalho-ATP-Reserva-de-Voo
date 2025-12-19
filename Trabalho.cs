@@ -2,6 +2,12 @@ using System;
 using System.IO;
 public class Trabalho
 {
+
+    /*
+     * Aqui ficam os vetores principais do sistema.
+     * Decidi usar nesse programa os nomes mais sugestivos o possivel para facilitar uma possivel futura atualização do código por um terceiro  .
+     */
+
     // Vetor que armazena os códigos dos voos
     static string[] voo = new string[3];
 
@@ -12,11 +18,11 @@ public class Trabalho
     static int[] assentos = new int[3];
 
     // Matriz de reservas: cada linha é um voo e cada coluna um assento
-    static string[,] reservas = new string[3, 50];
+    static string?[,] reservas = new string?[3, 50];
 
 
     // ===============================
-    // IMPORTAR DADOS DO ARQUIVO
+    // FUNÇÃO QUE IMPORTAR OS DADOS DOS VOOS DO ARQUIVO .TXT
     // ===============================
     public static void Importar()
     {
@@ -25,7 +31,7 @@ public class Trabalho
         string line;
         int p = 0;
 
-        while ((line = sr.ReadLine()) != null)
+        while ((line = sr.ReadLine()!) != null)
         {
             // Evita problemas se existir linha vazia no arquivo
             if (line.Trim() == "")
@@ -68,7 +74,7 @@ public class Trabalho
         Console.Write("Opção: ");
 
         // Retorna a opção escolhida pelo usuário
-        return int.Parse(Console.ReadLine());
+        return int.Parse(Console.ReadLine()!);
     }
 
 
@@ -79,7 +85,6 @@ public class Trabalho
     {
         int op;
 
-        // Mantém o programa executando até o usuário escolher sair
         do
         {
             op = Menu();
@@ -114,20 +119,19 @@ public class Trabalho
 
 
     // ===============================
-    // PROCURA INDICE DE VOO PELO CÓDIGO
+    // LOCALIZA O VOO PELO CÓDIGO INFORMADO
     // ===============================
     public static int ProcurarVoo(string codigoVoo)
     {
-        // Percorre vetor de voos procurando coincidência
         for (int i = 0; i < voo.Length; i++)
         {
             if (voo[i] == codigoVoo)
             {
-                return i; // Se encontrou, retorna posição
+                return i;
             }
         }
 
-        return -1; // Se não existir, retorna -1
+        return -1;
     }
 
 
@@ -137,9 +141,8 @@ public class Trabalho
     public static void RealizarReserva()
     {
         Console.Write("Digite o código do voo: ");
-        string codigoVoo = Console.ReadLine();
+        string codigoVoo = Console.ReadLine()!;
 
-        // Descobre qual linha da matriz pertence ao voo digitado
         int indiceVoo = ProcurarVoo(codigoVoo);
 
         if (indiceVoo == -1)
@@ -148,17 +151,18 @@ public class Trabalho
             return;
         }
 
-        Console.Write("Digite o número do assento (1 a 50): ");
-        int numeroAssento = int.Parse(Console.ReadLine());
+        // Mostra o destino do voo encontrado
+        Console.WriteLine($"Destino do voo: {destino[indiceVoo]}");
 
-        // Verifica se número de assento é válido
+        Console.Write("Digite o número do assento (1 a 50): ");
+        int numeroAssento = int.Parse(Console.ReadLine()!);
+
         if (numeroAssento < 1 || numeroAssento > 50)
         {
             Console.WriteLine("Número de assento inválido.");
             return;
         }
 
-        // Verifica se o assento já está reservado
         if (reservas[indiceVoo, numeroAssento - 1] != null)
         {
             Console.WriteLine("Assento já reservado.");
@@ -166,12 +170,11 @@ public class Trabalho
         }
 
         Console.Write("Nome do passageiro: ");
-        string nomePassageiro = Console.ReadLine();
+        string nomePassageiro = Console.ReadLine()!;
 
-        // Marca assento na matriz
         reservas[indiceVoo, numeroAssento - 1] = nomePassageiro;
 
-        assentos[indiceVoo]--; // reduz lugares disponíveis
+        assentos[indiceVoo]--;
 
         Console.WriteLine("Reserva realizada com sucesso.");
     }
@@ -183,7 +186,7 @@ public class Trabalho
     public static void CancelarReserva()
     {
         Console.Write("Digite o código do voo: ");
-        string codigoVoo = Console.ReadLine();
+        string codigoVoo = Console.ReadLine()!;
 
         int indiceVoo = ProcurarVoo(codigoVoo);
 
@@ -193,20 +196,27 @@ public class Trabalho
             return;
         }
 
-        Console.Write("Digite o número do assento (1 a 50): ");
-        int numeroAssento = int.Parse(Console.ReadLine());
+        // Mostra o destino do voo encontrado
+        Console.WriteLine($"Destino do voo: {destino[indiceVoo]}");
 
-        // Se o assento estiver vazio, não existe reserva para cancelar
+        Console.Write("Digite o número do assento (1 a 50): ");
+        int numeroAssento = int.Parse(Console.ReadLine()!);
+
+        if (numeroAssento < 1 || numeroAssento > 50)
+        {
+            Console.WriteLine("Número de assento inválido.");
+            return;
+        }
+
         if (reservas[indiceVoo, numeroAssento - 1] == null)
         {
             Console.WriteLine("Assento disponível! Não há reserva para cancelar.");
             return;
         }
 
-        // Libera o assento
         reservas[indiceVoo, numeroAssento - 1] = null;
 
-        assentos[indiceVoo]++; // devolve assento ao total disponível
+        assentos[indiceVoo]++;
 
         Console.WriteLine("Reserva cancelada com sucesso.");
     }
@@ -218,7 +228,7 @@ public class Trabalho
     public static void MostrarAssentosDisponiveis()
     {
         Console.Write("Digite o código do voo: ");
-        string codigoVoo = Console.ReadLine();
+        string codigoVoo = Console.ReadLine()!;
 
         int indiceVoo = ProcurarVoo(codigoVoo);
 
@@ -228,9 +238,11 @@ public class Trabalho
             return;
         }
 
+        // Mostra o destino do voo encontrado
+        Console.WriteLine($"Voo {codigoVoo} encontrado → Destino: {destino[indiceVoo]}");
+
         Console.WriteLine($"Assentos disponíveis para o voo {codigoVoo}:");
 
-        // Percorre todas as colunas do voo
         for (int i = 0; i < 50; i++)
         {
             if (reservas[indiceVoo, i] == null)
@@ -249,7 +261,7 @@ public class Trabalho
     public static void RelatorioOcupacao()
     {
         Console.Write("Código do voo: ");
-        string codigoVoo = Console.ReadLine();
+        string codigoVoo = Console.ReadLine()!;
 
         int posicaoVoo = ProcurarVoo(codigoVoo);
 
@@ -261,7 +273,6 @@ public class Trabalho
 
         Console.WriteLine($"\nVoo {codigoVoo} - Destino: {destino[posicaoVoo]}");
 
-        // lista nome de cada passageiro ou marca como disponível
         for (int i = 0; i < 50; i++)
         {
             if (reservas[posicaoVoo, i] == null)
